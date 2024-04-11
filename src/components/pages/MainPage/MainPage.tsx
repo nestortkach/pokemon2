@@ -1,11 +1,16 @@
+import React from "react";
+
+import Header from "../../header/Header";
+import PokemonList from "../../pokemonList/PokemonList";
+
+import './mainPage.scss';
+
 const MainPage = () => {
     return (
         <>
-            <header className="header">
-                <div className="header__container"></div>
-            </header>
+            <Header/>
             <main className="page">
-                <div className="page__container">dd</div>
+                <PokemonList/>
             </main>
         </>
     )

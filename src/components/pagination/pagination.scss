@@ -1,0 +1,32 @@
+.pagination {
+    // .pagination__buttons
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 20px;
+    }
+    &__button {
+        padding: 8px 22px;
+        border-radius: 18px;
+        background-color: #A0153E;
+        color: #DDE6ED;
+        transition: all 0.3s ease;
+        @media (any-hover: hover){
+            &:hover{
+                background-color: #7a1a37;
+                cursor: pointer;
+            }
+        }
+        &:disabled {
+            background-color: #3b1822;    
+            cursor: default;
+        }
+    }
+}
+
+
+    
+
+   
+
