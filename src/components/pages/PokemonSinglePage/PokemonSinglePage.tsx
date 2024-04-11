@@ -19,16 +19,23 @@ import './pokemonSinglePage.scss';
 
 const PokemonSinglePage = () => {
   const dispatch = useAppDispatch();
-  const { id } = useParams();
+  const { id } = useParams<{ id: string | undefined }>();
+
 
   const { pokemonLoadingStatus, pokemonInfo } = useSelector((state: RootState) => state.pokemons);
 
   useEffect(() => {
-    dispatch(fetchSinglePokemon(id));
-  }, [dispatch, id]); // add 'id' to the dependency array
+    if (id) {
+      dispatch(fetchSinglePokemon(id.toLowerCase()));
+    }
+  }, [dispatch]); // add 'id' to the dependency array
 
   if (pokemonLoadingStatus === 'loading') {
     return <Spinner/>
+  }
+
+  if (pokemonLoadingStatus === 'error') {
+    return <div>Oops... Something went wrong</div>
   }
 
   const renderMoves = (arr: string[]) => {
