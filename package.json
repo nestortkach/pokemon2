@@ -2,7 +2,7 @@
   "name": "pokemontest",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://serg1k1.github.io/",
+  "homepage": "https://serg1k1.github.io/pokemontest",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
