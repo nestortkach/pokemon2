@@ -6,10 +6,10 @@ import PokemonSinglePage from '../pages/PokemonSinglePage/PokemonSinglePage';
 
 function App() {
   return (
-    <Routes>
-      <Route index element={<MainPage />} />
-      <Route path='/:id' element={<PokemonSinglePage/>}/>
-    </Routes>
+      <Routes>
+        <Route index element={<MainPage />} />
+        <Route path='/:id' element={<PokemonSinglePage/>}/>
+      </Routes>
   );
 }
 

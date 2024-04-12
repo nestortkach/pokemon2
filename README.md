@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Щоб запустити локально:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+Зклонувати репозиторій на компютер. В репозиторії проекту скачати модулі - npm i. Щоб запустити - npm start.
+
+## Використані технології:
+
+React, TypeScript, ES-lint, Redux-toolkit, axios, REST API, Scss.
+
+## Посилання на GitHub - https://github.com/Serg1k1/pokemontest/tree/main
+
+## Посилання на Deploy (баг з початковою сторінкою звязана з Github pages) - https://serg1k1.github.io/pokemontest/
 
 ## Available Scripts
 
