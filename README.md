@@ -6,9 +6,9 @@
 
 React, TypeScript, ES-lint, Redux-toolkit, axios, REST API, Scss.
 
-## Посилання на GitHub - https://github.com/Serg1k1/pokemontest/tree/main
+## Посилання на GitHub - https://github.com/nestortkach/pokemontest
 
-## Посилання на Deploy (баг з початковою сторінкою звязана з Github pages) - https://serg1k1.github.io/pokemontest/
+## Посилання на Deploy - https://nestortkach.github.io/pokemontest/
 
 ## Available Scripts
 
