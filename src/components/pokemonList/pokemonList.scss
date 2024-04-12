@@ -26,3 +26,27 @@
         font-size: 30px;
     }
 }
+
+.error__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.error__link {
+    font-size: 22px;
+    color: #1e1f1f;
+    @media (any-hover: hover){
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.error__title {
+    font-size: 32px;
+    color: #000000;   
+}

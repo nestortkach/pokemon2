@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import pokemons from './slices/pokemonListSlice';
+import typesReducer from './slices/typesListSlice';
 
 export const store = configureStore({
-  reducer: {pokemons},
+  reducer: {pokemons, typesReducer},
   devTools: process.env.NODE_ENV !== 'production'
 });
 

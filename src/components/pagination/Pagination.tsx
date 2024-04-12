@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { useAppDispatch } from "../../hooks/reduxHooks";
-import { fetchPokemons } from "../../store/slices/pokemonListSlice";
+import { fetchPokemons } from "../../store/slices/api";
 import { RootState } from "../../store/store";
 import './pagination.scss';
 

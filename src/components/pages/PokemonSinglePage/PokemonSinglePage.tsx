@@ -1,41 +1,50 @@
-import React, { useEffect } from "react";
+import React, { useEffect, FC } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Spinner from "../../spinner/Spinner";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../../hooks/reduxHooks";
 import { RootState } from "../../../store/store";
-import { fetchSinglePokemon } from "../../../store/slices/pokemonListSlice";
+import { fetchSinglePokemon } from "../../../store/slices/api";
+import {filtersActiveTypeChange} from '../../../store/slices/typesListSlice';
 
 import './pokemonSinglePage.scss';
 
-// Define the shape of a Pokemon
-// interface Pokemon {
-//   name: string;
-//   thumbnail: string;
-//   moves: string[];
-//   // other properties of a Pokemon go here
-// }
+interface PokemonInfo {
+  moves: string[];
+  types: { type: { name: string } }[];
+  thumbnail: string;
+  name: string | null;
+}
 
-const PokemonSinglePage = () => {
+interface PokemonsState {
+  pokemonLoadingStatus: string;
+  pokemonInfo: PokemonInfo;
+}
+
+const PokemonSinglePage: FC = () => {
   const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string | undefined }>();
 
-
-  const { pokemonLoadingStatus, pokemonInfo } = useSelector((state: RootState) => state.pokemons);
+  const { pokemonLoadingStatus, pokemonInfo } = useSelector((state: RootState) => state.pokemons as PokemonsState);
 
   useEffect(() => {
     if (id) {
       dispatch(fetchSinglePokemon(id.toLowerCase()));
     }
-  }, [dispatch]); // add 'id' to the dependency array
+  }, [dispatch]);
 
   if (pokemonLoadingStatus === 'loading') {
     return <Spinner/>
   }
 
   if (pokemonLoadingStatus === 'error') {
-    return <div>Oops... Something went wrong</div>
+    return (
+      <div className="error__container">
+        <Link className="error__link" to={'/'} >Go back to homepage</Link>
+        <h2 className="error__title" >Oops... Something went wrong. Looks like you typed wrong name of the pokemon</h2>
+      </div>
+      )
   }
 
   const renderMoves = (arr: string[]) => {
@@ -44,9 +53,9 @@ const PokemonSinglePage = () => {
     ));
   }
 
-  const renderTypes = (arr: any) => {
-    return arr.map((item: any) => (
-        <li key={item.type.name}>{item.type.name}</li>
+  const renderTypes = (arr: { type: { name: string } }[]) => {
+    return arr.map((item) => (
+        <Link onClick={() => dispatch(filtersActiveTypeChange(item.type.name))} to={'/'} key={item.type.name}>{item.type.name}</Link>
       ));  
   }
 
@@ -71,9 +80,9 @@ const PokemonSinglePage = () => {
             </div>
             <div className="info-pokemon__types types">
                 <h4 className="types__title">Types</h4>
-                <ul className="types__list">
+                <div className="types__list">
                     {typesList}
-                </ul>
+                </div>
             </div>
           </div>
         </div>
