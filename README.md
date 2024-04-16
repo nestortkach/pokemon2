@@ -6,9 +6,9 @@
 
 React, TypeScript, ES-lint, Redux-toolkit, axios, REST API, Scss.
 
-## Посилання на GitHub - https://github.com/nestortkach/pokemontest
+## Посилання на GitHub - https://github.com/nestortkach/pokemon2
 
-## Посилання на Deploy - https://nestortkach.github.io/pokemontest/
+## Посилання на Deploy - https://nestortkach.github.io/pokemon2/
 
 ## Available Scripts
 
